@@ -1,0 +1,42 @@
+<div class="home-container">
+   <section class="home">
+      <form action="/search" method="post"> <!-- Adjust 'action' to the correct route endpoint -->
+         <h3>Job Search</h3>
+         <p>Job Title</p>
+         <input type="text" name="title" placeholder="Enter course number or category" required maxlength="20" class="input">
+         <input type="submit" value="Search Job" name="search" class="btn search-button">
+      </form>
+   </section>
+</div>
+
+<section class="category job-details">
+   <!-- Display the job search results -->
+   <% if (joblist && joblist.length > 0) { %>
+       <% joblist.forEach(job => { %>
+           <div class="details">
+               <h3><%= job.JobTitle %></h3>
+               <div class="job-info">
+
+                  <p>Job Title: <%= job.JobTitle %></p>
+                  <p>Job Class number: <%= job.classNumber %></p>
+                  <p>Job Type: <%= job.jobType %></p>
+                  <p>Schedule Type: <%= job.scheduleType %></p>
+                  <p>Location: <%= job.location %></p>
+                  <p>Description: <%= job.description %></p>
+                  <p>Pay Rate: <%= job.payRate %></p>
+                  <p>Education: <%= job.education %></p>
+                  <p>Experience: <%= job.experience %></p>
+                  <p>Skills: <%= job.skills %></p>
+                  <p>Date Posted: <%= job.dateposted %></p>
+                  <p>Deadline: <%= job.deadline %></p>
+                  <a class="apply-button" href="/apply">Apply</a>
+
+               </div>
+           </div>
+       <% }); %>
+   <% } else { %>
+       <p>No jobs found</p>
+   <% } %>
+</section>
+
+

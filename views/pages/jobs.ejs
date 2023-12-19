@@ -1,0 +1,46 @@
+<body>
+  <section class="category">
+    <h1 class="heading">Job categories</h1>
+    <div class="box-container">
+      <a href="/jobs?category=Grader" class="box" data-category="Grader">
+        <div>
+          <h3>Grader</h3>
+        </div>
+      </a>
+      <a
+        href="/jobs?category=labInstructor"
+        class="box"
+        data-category="Lab Instructor"
+      >
+        <div>
+          <h3>Lab Instructor</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section class="category job-details">
+    <!-- Display the job search results -->
+    <% if (joblist && joblist.length > 0) { %> <% joblist.forEach(job => { %>
+    <div class="details">
+      <h3><%= job.JobTitle %></h3>
+      <div class="job-info">
+        <p>Job Title: <%= job.JobTitle %></p>
+        <p>Job Class number: <%= job.classNumber %></p>
+        <p>Job Type: <%= job.jobType %></p>
+        <p>Schedule Type: <%= job.scheduleType %></p>
+        <p>Location: <%= job.location %></p>
+        <p>Description: <%= job.description %></p>
+        <p>Pay Rate: <%= job.payRate %></p>
+        <p>Education: <%= job.education %></p>
+        <p>Experience: <%= job.experience %></p>
+        <p>Skills: <%= job.skills %></p>
+        <p>Date Posted: <%= job.dateposted %></p>
+        <p>Deadline: <%= job.deadline %></p>
+        <a class="apply-button" href="/apply">Apply</a>
+      </div>
+    </div>
+    <% }); %> <% } else { %>
+    <p>No jobs found</p>
+    <% } %>
+  </section>
+</body>

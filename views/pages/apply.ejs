@@ -1,0 +1,243 @@
+<body>
+  <div class="application-container">
+    <section class="application-form">
+      <form id="application-form" action="/apply" method="post">
+        <h1>UMKC CSEE GTA/Grader Application</h1>
+        <p>
+          All applications are due to
+          <a href="mailto:umkcsceworkstudy@umkc.edu">umkcsceworkstudy@umkc.edu</a>
+          All applications are due to CSEE GTA/Grader Application
+          <br />
+          Spring 2024 Employment no later than 5:00 PM, Friday, October 8th.
+        </p>
+
+
+
+
+        <div class="flex">
+          <div class="box">
+              <label for="fName">First Name</label>
+            <input type="fName" id="fName" name="fName" placeholder="First Name" class="input" required />
+          </div>
+          <div class="box">
+              <label for="surname">Surname</label>
+            <input type="surname" id="surname" name="surname" placeholder="Surname" class="input" required />
+          </div>
+          <div class="box">
+              <label for="studentID">Student ID</label>
+            <input type="studentID" id="studentID" name="studentID" placeholder="Student ID" class="input" required />
+          </div>
+
+          <div class="box">
+              <label for="email">UMKC Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" class="input" required />
+          </div>
+
+
+          <div class="box">
+              <label for="classNum">Class Name & Number</label>
+            <input type="classNum" id="classNum" name="classNum" placeholder="Class Number" class="input" required />
+          </div>
+
+
+
+
+          <div class="box">
+              <label for="level">Current Level (BS/MS/PhD)</label>
+            <select id="level" name="level"  class="input" required>
+              <option value="Select From List">Select From List </option>
+              <option value="BS">BS</option>
+              <option value="MS">MS</option>
+              <option value="PhD">PhD</option>
+            </select>
+          </div>
+
+
+          <div class="box">
+              <label for="graduatingSemester">Graduating Semester</label>
+            <select id="graduatingSemester" name="graduatingSemester" class="input" required>
+              <option value="Select From List">Select From List</option>
+              <option value="Spring">Spring</option>
+              <option value="Fall">Fall</option>
+              <option value="Summer">Summer</option>
+            </select>
+          </div>
+
+
+
+
+          <div class="box">
+            <label for="GPA">UMKC Cumulative GPA (leave blank if first semester is in
+              progress)</label>
+            <input type="GPA" id="GPA" name="GPA" placeholder="GPA" class="input" required />
+          </div>
+
+
+          <div class="box">
+            <label for="hours">Hours Completed at UMKC (leave blank if first semester is in
+              progress)</label>
+            <input type="hours" id="hours" name="hours" placeholder="Hours" class="input" required/>
+          </div>
+
+
+          <div class="box">
+            <label for="degree">Undergraduate Degree (if applicable)</label>
+            <select id="degree" name="degree" class="input" required>
+              <option value="Select From List">Select From List</option>
+              <option value="N/A">N/A</option>
+              <option value="BS">BS</option>
+              <option value="MS">MS</option>
+              <option value="PhD">PhD</option>
+            </select>
+          </div>
+
+
+
+
+          <div class="box">
+              <label for="major">Current Major (CS/IT/ECE/EE)</label>
+            <select id="major" name="major" class="input" required>
+              <option value="Select From List">Select From List</option>
+              <option value="CS">CS</option>
+              <option value="IT">IT</option>
+              <option value="ECE">ECE</option>
+              <option value="EE">EE</option>
+            </select>
+          </div>
+
+
+
+
+          <div class="box">
+              <label for="applyingFor">Applying For: (Grader, Lab Instructor, or Both)</label>
+            <select id="applyingFor" name="applyingFor" class="input" required>
+              <option value="Select From List">Select From List</option>
+              <option value="Grader">Grader</option>
+              <option value="Lab Instructor">Lab Instructor</option>
+              <option value="Both">Both</option>
+            </select>
+          </div>
+
+
+          <div class="box">
+            <label for="GTA">International Students ONLY: Are you GTA Certified?</label>
+            <select id="GTA" name="GTA" class="input" required>
+              <option value="Select From List">Select From List</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="box">
+            <label for="courses">Courses you could serve as lab instructor or grade for (ex. CS
+              201L/CS 5525/ECE 216, etc.)</label>
+            <textarea id="courses" name="courses" placeholder="Courses" class="input" required rows="4"></textarea>
+          </div>
+
+
+          <button class="btn" type="submit">Submit</button>
+        </div>
+
+      </form>
+    </section>
+  </div>
+  <!-- <script>
+    document
+      .getElementById("application-form")
+      .addEventListener("submit", function (event) {
+        const gtaCertifiedInput = document.getElementById("GTA");
+        const applyingForInput = document.getElementById("applyingFor");
+
+
+
+
+        if (gtaCertifiedInput.value.toLowerCase() === "no") {
+          // Display a warning message with two options
+          const warningMessage =
+            "You are not GTA certified. Choose an option:\n\n1. Redirect to certification page?\n2. Go back to the jobs list?";
+          const userChoice = prompt(warningMessage);
+
+
+          if (userChoice === "1") {
+            // Redirect the user to the provided link
+            window.location.href =
+              "https://catalog.umkc.edu/general-graduate-academic-regulations-information/international-graduate-student-academic-regulations/#:~:text=International%20graduate%20students%20must%20be,of%20the%20International%20Student%20Affairs.";
+          } else if (userChoice === "2") {
+            // User chose to go back to the jobs list
+            window.location.href = "/jobs"; // Update with the correct URL
+          }
+
+
+          event.preventDefault(); // Prevent the form from being submitted immediately
+        }
+      });
+  </script> -->
+
+
+<script>
+  // Function to check if a required field is empty
+  function isFieldEmpty(field) {
+  if (
+    (field.tagName === 'INPUT' || field.tagName === 'TEXTAREA') &&
+    (field.value.trim() === '' || field.value === field.getAttribute('placeholder'))
+  ) {
+    // Check if the value is empty or matches the placeholder text
+    return true;
+  } else if (field.tagName === 'SELECT') {
+    // Check if the selected value is the default "Select From List" option
+    return field.value === 'Select From List';
+  } else {
+    return false;
+  }
+}
+
+
+
+  // Function to toggle visibility of the invalid-field class for inputs
+  function toggleInvalidField(field, isVisible) {
+    if (isVisible) {
+      field.classList.add('invalid-field'); // Add a class to style the input as invalid
+    } else {
+      field.classList.remove('invalid-field'); // Remove the class when the field is filled
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Add event listener to the submit button
+    document.querySelector('.btn').addEventListener('click', function (event) {
+      // Prevent the form from submitting immediately
+      event.preventDefault();
+
+      let isAllFieldsFilled = true;
+
+      // Check each required field
+      document.querySelectorAll('.input[required], textarea[required], select[required]').forEach(field => {
+        if (isFieldEmpty(field)) {
+          // Show the required label if field is empty
+          toggleInvalidField(field, true);
+          isAllFieldsFilled = false;
+        } else {
+          // Hide the required label if field is filled
+          toggleInvalidField(field, false);
+        }
+      });
+
+      // Submit the form if all required fields are filled
+      if (isAllFieldsFilled) {
+        document.getElementById("application-form").submit();
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
