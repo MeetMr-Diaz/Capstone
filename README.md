@@ -30,6 +30,8 @@ Download repository it contains all the denpendencies. Check package.json for al
 To run: npm node app.js
 
 To test: node testName
+
+
 ________________________________________________________________________________________________________________________________________________
 Test
 
@@ -44,6 +46,8 @@ In order to run test change directories to test folder
 cd  test
 
 to run test: node {test name}. For example: node loginTest
+
+Test Student Login Credentials username: umkc@umkc.edu password: umkc
 
 
 
